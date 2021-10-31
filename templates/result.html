@@ -1,0 +1,101 @@
+<!doctype html>
+
+<html>
+            <style>
+        input[type=text], select {
+        width: 65%;
+        /* height: 40px; */
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+        /* align: center; */
+        }
+
+        input[type=submit] {
+        width: 30%;
+        background-color: #8F3112;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+        background-color: #69220B;
+        }
+
+        div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 75%;
+        align: center;  
+		opacity: 0.8;
+        }
+
+        H1 {color: white; font-size: 75px}
+        H4,H3 {color: white; font-size: 30px}
+		H2 {color: #DB87C5; font-size: 55px}
+
+        </style>
+
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+
+        <title>Machine Learning Project</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+
+
+    </head>
+
+    <body>
+
+ 
+        <h2 align="center">MACHINE LEARNING PROJECT</h2>
+		<h3 align="center">EUROPEAN SOCCER REGRESSION ANALYSIS</h3>
+
+        <style>
+            body{
+				background-image: url('https://coolwallpapers.me/picsup/5483779-soccer-wallpapers.jpg');
+				<!-- 
+                background-image: url('https://media.istockphoto.com/photos/soccer-player-kicks-a-ball-picture-id1163749879?k=20&m=1163749879&s=612x612&w=0&h=gIK53OcaeVwLKadYV6k1IA5aVz8WEHgM3Wh3QNWQ9ug=');
+                -->
+				
+				background-repeat: no-repeat;
+                background-attachment: fixed;  
+                background-size: cover;
+                }
+        </style>
+
+<div align="center" style = "position:absolute; left:10%">
+  <form action="{{ url_for('predict')}}"  method="post">
+ 
+		<h2>	  {{ prediction_text }} </h2>
+
+  </form>  
+</div>
+
+
+        
+        <!-- Load external JavaScript -->
+        <script src="scripts.js"></script>
+        
+    </body>
+
+</html>

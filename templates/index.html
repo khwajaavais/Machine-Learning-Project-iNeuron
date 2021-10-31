@@ -1,0 +1,189 @@
+<!doctype html>
+
+<html>
+            <style>
+        input[type=text], select {
+        width: 65%;
+        /* height: 40px; */
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+
+        /* align: center; */
+        }
+
+        input[type=submit] {
+        width: 30%;
+        background-color: #DB87C5;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+        background-color: black;
+        }
+
+        div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+        width: 75%;
+        align: center;  
+		opacity: 0.8;
+        }
+
+        H1 {color: white; font-size: 75px}
+        H4,H3 {color: white; font-size: 30px}
+		
+		H2 {color: #DB87C5; font-size: 55px}
+
+        </style>
+
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> -->
+
+
+        <title>Machine Learning Project</title>
+
+        <!-- Load external CSS styles -->
+        <link rel="stylesheet" href="styles.css">
+
+
+    </head>
+
+    <body>
+
+        <h2 align="center">MACHINE LEARNING PROJECT</h2>
+		<h3 align="center">EUROPEAN SOCCER REGRESSION ANALYSIS</h3>
+
+        <style>
+            body{
+				background-image: url('https://coolwallpapers.me/picsup/5483779-soccer-wallpapers.jpg');
+				<!-- 
+                background-image: url('https://media.istockphoto.com/photos/soccer-player-kicks-a-ball-picture-id1163749879?k=20&m=1163749879&s=612x612&w=0&h=gIK53OcaeVwLKadYV6k1IA5aVz8WEHgM3Wh3QNWQ9ug=');
+                https://icymca.org/wp-content/uploads/2020/04/soccer-football-sunset-1-1024x553_orig.jpg
+				-->
+                background-repeat: no-repeat;
+                background-attachment: fixed;  
+                background-size: cover;
+                }
+        </style>
+
+<div align="center" style = "position:absolute; left:10%">
+  <form action="{{ url_for('predict')}}"  method="post">
+
+
+            <b><label for="aggression">AGGRESSION</label><br>
+            <input type="text" id="aggression" name="aggression" placeholder="AGGRESSION OF THE PLAYER" required="required">
+
+			<br><br>
+                <label for="stamina">STAMINA</label><br>
+                <input type="text" id="stamina" name="stamina" placeholder="STAMINA OF THE PLAYER" required="required">
+
+			<br><br>
+            <label for="reactions">REACTIONS</label><br>
+            <input type="text" id="reactions" name="reactions" placeholder="REACTIONS OF THE PLAYER" required="required">
+			
+			<br><br>
+                <label for="potential">POTENTIAL</label><br>
+                <input type="text" id="potential" name="potential" placeholder=" POTENTIAL OF THE PLAYER" required="required">
+				
+			<br><br>
+                <label for="positioning">POSITIONING</label><br>
+                <input type="text" id="positioning" name="positioning" placeholder="POSITIONING OF THE PLAYER" required="required">
+				
+            <br><br>
+                <label for="ball_control" >BALL CONTROL</label><br>
+                <input type="text" id="ball_control" name="ball_control" placeholder="BALL CONTROLLING SKILLS OF THE PLAYER" required="required">
+            
+			<br><br>
+                <label for="strength">STRENGTH</label><br>
+                <input type="text" id="strength" name="strength" placeholder="STRENGTH OF THE PLAYER" required="required">
+
+			<br><br>
+            <label for="marking">MARKING</label><br>
+            <input type="text" id="marking" name="marking" placeholder="MARKING THE OPPONENT PLAYER" required="required">
+			
+			<br><br>
+                <label for="crossing">CROSSING</label><br>
+                <input type="text" id="crossing" name="crossing" placeholder="CROSSING SKILLS" required="required">
+				
+            <br><br>
+
+                <label for="finishing" >FINISHING SKILLS</label><br>
+                <input type="text" id="finishing" name="finishing" placeholder="FINISHING SKILLS OF THE PLAYER" required="required">
+
+			<br><br>
+                <label for="dribbling">DRIBBLING SKILL</label><br>
+                <input type="text" id="dribbling" name="dribbling" placeholder="DRIBBLING SKILLS OF THE PLAYER" required="required">
+
+			<br><br>
+                <label for="interceptions">INTERCEPTION</label><br>
+                <input type="text" id="interceptions" name="interceptions" placeholder="INTERCEPTIONS OF THE PLAYER" required="required">
+
+
+			<br><br>
+                <label for="standing_tackle">STANDING TACKLE</label><br>
+                <input type="text" id="standing_tackle" name="standing_tackle" placeholder="STANDING TACKLE SKILLS" required="required">
+
+			<br><br>
+                <label for="heading_accuracy">HEADER ACCURACY</label><br>
+                <input type="text" id="heading_accuracy" name="heading_accuracy" placeholder="HEADING ACCURACY OF THE PLAYER" required="required">
+
+			<br><br>
+                <label for="shot_power">SHOT POWER</label><br>
+                <input type="text" id="shot_power" name="shot_power" placeholder="SHOT POWER OF THE PLAYER" required="required">
+
+
+			<br><br>
+                <label for="short_passing">SHORT PASSING</label><br>
+                <input type="text" id="short_passing" name="short_passing" placeholder="SHORT PASSING SKILLS OF THE PLAYER" required="required">
+				
+			<br><br>
+                <label for="gk_reflexes">GOAL KEEPER REFLEXES</label><br>
+                <input type="text" id="gk_reflexes" name="gk_reflexes" placeholder="GOAL KEEPER REFLEXES" required="required">
+            
+			<br><br>
+                <label for="gk_handling">GOAL KEEPER HANDLING</label><br>
+                <input type="text" id="gk_handling" name="gk_handling" placeholder="GOAL KEEPER HANDLING SKILLS" required="required">
+			
+
+			<br><br>
+                <label for="gk_diving">GOAL KEEPER DIVING</label><br>
+                <input type="text" id="gk_diving" name="gk_diving" placeholder="GOAL KEEPER DIVING SKILLS" required="required">
+
+			<br><br>
+                <label for="gk_positioning">GOAL KEEPER POSITIONING</label><br>
+                <input type="text" id="gk_positioning" name="gk_positioning" placeholder="GOAL KEEPER POSITIONING" required="required">
+
+			<br><br> 
+ 
+    <input type="submit" value="Submit">
+
+
+  </form>
+  
+</div>
+
+
+        
+        <!-- Load external JavaScript -->
+        <script src="scripts.js"></script>
+        
+    </body>
+
+</html>
